@@ -1,0 +1,17 @@
+PreProcess:
+  transform_ops:
+  - DecodeImage:
+      channel_first: false
+      img_mode: BGR
+  - ClsLabelEncode: null
+  - ClsResizeImg:
+      image_shape:
+      - 3
+      - 48
+      - 192
+  - KeepKeys:
+      keep_keys:
+      - image
+      - label
+PostProcess:
+  name: ClsPostProcess
